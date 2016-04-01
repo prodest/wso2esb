@@ -1,0 +1,15 @@
+before_script:
+  - git --version
+  - git remote add origin git@github.com:vertigobr/wso2esb.git
+
+stages:
+  - deploy
+
+push_esb_to_github:
+  stage: deploy
+  script:
+    - git push -u origin
+  only:
+    - master
+  tags:
+    - shell
