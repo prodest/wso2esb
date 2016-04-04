@@ -7,7 +7,7 @@ stages:
 push_esb_to_github:
   stage: deploy
   script:
-    - git run -v $(pwd):/tmp -v ~/.ssh:/.ssh_host cd /tmp && git remote remove origin && git remote add ssh://git@git.vertigo.com.br:2222/docker/wso2esb.git && git push -u origin
+    - docker run -v $(pwd):/tmp -v ~/.ssh:/.ssh_host boomtownroi/git cd /tmp && git remote remove origin && git remote add ssh://git@git.vertigo.com.br:2222/docker/wso2esb.git && git push -u origin
   only:
     - master
   tags:
