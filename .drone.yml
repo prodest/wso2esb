@@ -3,3 +3,11 @@ deploy:
     branch: master
     remote: git@github.com:vertigobr/wso2esb.git
     force: false
+
+notify:
+  slack:
+    webhook_url: https://hooks.slack.com/services/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
+    channel: gitlab
+    username: drone
+    template: >
+      build #{{ build.number }} finished with a {{ build.status }} status
