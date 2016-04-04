@@ -1,0 +1,5 @@
+deploy:
+  git_push:
+    branch: master
+    remote: git@github.com:vertigobr/wso2esb.git
+    force: false
